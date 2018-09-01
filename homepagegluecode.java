@@ -47,5 +47,16 @@ public class homepagegluecode extends WebConnector1{
 	public void the_page_url_should_contain(String locator) {
 		driver.findElement(By.xpath(locator)).click();
 	 
+		
+		// Added this new line of code G3
 	}
+	@When("I clik on {string} Car insurance link")
+	public void i_clik_on_Car_insurance_link(String string) throws InterruptedException {
+		
+		Thread.sleep(2000);
+		
+		WebElement ele = driver.findElement(By.xpath(string));
+		Select dropdown= new Select(ele);
+		dropdown.selectByVisibleText("Car Insurance");
+		ele.click();
 }
